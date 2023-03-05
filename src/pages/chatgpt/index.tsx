@@ -1,5 +1,6 @@
 import http from "@/utils/http"
 import { useState } from "react"
+import { marked } from "marked"
 export default function Chatgpt() {
   const [questionStr, setQuestionStr] = useState<string>("")
   const [answerStr, setAnswerStr] = useState<string>("")
@@ -18,8 +19,8 @@ export default function Chatgpt() {
         model: "gpt-3.5-turbo",
       },
     }).then(res => {
-      console.log(res.choices[0].text)
-      setAnswerStr(res.choices[0].text)
+      console.log(marked.parse(res.choices[0].text))
+      setAnswerStr(marked.parse(res.choices[0].text))
     })
   }
   return (
@@ -33,7 +34,10 @@ export default function Chatgpt() {
       />
       <button onClick={search}>查询</button>
       <h2>结果</h2>
-      <div style={{ whiteSpace: "pre-line" }}>{answerStr}</div>
+      <div
+        style={{ whiteSpace: "pre-line" }}
+        dangerouslySetInnerHTML={{ __html: answerStr }}
+      ></div>
     </div>
   )
 }

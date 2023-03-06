@@ -1,6 +1,10 @@
 import http from "@/utils/http"
 import { useState } from "react"
 import { marked } from "marked"
+import hljs from "highlight.js"
+import "highlight.js/styles/github.css"
+import style from "./index.module.scss"
+
 export default function Chatgpt() {
   const [questionStr, setQuestionStr] = useState<string>("")
   const [answerStr, setAnswerStr] = useState<string>("")
@@ -19,14 +23,27 @@ export default function Chatgpt() {
         model: "gpt-3.5-turbo",
       },
     }).then(res => {
+      marked.setOptions({
+        renderer: new marked.Renderer(),
+        highlight: function (code, lang) {
+          return hljs.highlightAuto(code).value
+        },
+        // pedantic: false,
+        // gfm: true,
+        // breaks: false,
+        // sanitize: false,
+        // smartLists: true,
+        // smartypants: false,
+        // xhtml: false,
+      })
       console.log(marked.parse(res.choices[0].text))
       setAnswerStr(marked.parse(res.choices[0].text))
     })
   }
   return (
-    <div>
+    <div className={style.chatgpt}>
       <input
-        type='text'
+        type="text"
         value={questionStr}
         onChange={e => {
           setQuestionStr(e.target.value)
@@ -35,7 +52,7 @@ export default function Chatgpt() {
       <button onClick={search}>查询</button>
       <h2>结果</h2>
       <div
-        style={{ whiteSpace: "pre-line" }}
+        className={`hljs ${style.markdown}`}
         dangerouslySetInnerHTML={{ __html: answerStr }}
       ></div>
     </div>

@@ -1,6 +1,7 @@
 import Menu from "@/components/Menu"
 import { useRouter } from "next/router"
 import { useState } from "react"
+import style from "./index.module.scss"
 
 const items = [
   {
@@ -23,6 +24,7 @@ export default function Sider() {
 
   return (
     <Menu
+      className={style.sider}
       items={items}
       selectedKey={selectedKey}
       onClick={({ key }) => {

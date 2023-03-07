@@ -1,7 +1,7 @@
-import axios from "axios"
+import axios from 'axios'
 
 const http = axios.create({
-  baseURL: "",
+  baseURL: '',
 })
 
 http.interceptors.response.use(
@@ -10,7 +10,7 @@ http.interceptors.response.use(
   },
   error => {
     return Promise.reject(error)
-  }
+  },
 )
 
 export default http

@@ -1,26 +1,26 @@
-import http from "@/utils/http"
-import { useState } from "react"
-import { marked } from "marked"
-import hljs from "highlight.js"
-import "highlight.js/styles/github.css"
-import style from "./index.module.scss"
+import http from '@/utils/http'
+import { useState } from 'react'
+import { marked } from 'marked'
+import hljs from 'highlight.js'
+import 'highlight.js/styles/github.css'
+import style from './index.module.scss'
 
 export default function Chatgpt() {
-  const [questionStr, setQuestionStr] = useState<string>("")
-  const [answerStr, setAnswerStr] = useState<string>("")
+  const [questionStr, setQuestionStr] = useState<string>('')
+  const [answerStr, setAnswerStr] = useState<string>('')
   const search = () => {
     http({
-      method: "post",
-      url: "https://api.aioschat.com/",
+      method: 'post',
+      url: 'https://api.aioschat.com/',
       data: {
         messages: [
           {
-            role: "user",
+            role: 'user',
             content: questionStr,
           },
         ],
         tokensLength: 10,
-        model: "gpt-3.5-turbo",
+        model: 'gpt-3.5-turbo',
       },
     }).then(res => {
       marked.setOptions({
@@ -43,7 +43,7 @@ export default function Chatgpt() {
   return (
     <div className={style.chatgpt}>
       <input
-        type="text"
+        type='text'
         value={questionStr}
         onChange={e => {
           setQuestionStr(e.target.value)

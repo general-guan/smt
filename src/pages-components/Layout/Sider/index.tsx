@@ -1,20 +1,20 @@
-import Menu from "@/components/Menu"
-import { useRouter } from "next/router"
-import { useState } from "react"
-import style from "./index.module.scss"
+import Menu from '@/components/Menu'
+import { useRouter } from 'next/router'
+import { useState } from 'react'
+import style from './index.module.scss'
 
 const items = [
   {
-    label: "首页",
-    key: "/",
+    label: '首页',
+    key: '/',
   },
   {
-    label: "Chatgpt",
-    key: "/chatgpt",
+    label: 'Chatgpt',
+    key: '/chatgpt',
   },
   {
-    label: "Music",
-    key: "/music",
+    label: 'Music',
+    key: '/music',
   },
 ]
 

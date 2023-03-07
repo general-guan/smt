@@ -1,12 +1,12 @@
-import http from "@/utils/http"
-import { useState } from "react"
+import http from '@/utils/http'
+import { useState } from 'react'
 export default function Chatgpt() {
-  const [questionStr, setQuestionStr] = useState<string>("")
-  const [answerStr, setAnswerStr] = useState<string>("")
+  const [questionStr, setQuestionStr] = useState<string>('')
+  const [answerStr, setAnswerStr] = useState<string>('')
   const search = () => {
     http({
-      method: "get",
-      url: "",
+      method: 'get',
+      url: '',
     }).then(res => {
       console.log(res)
     })

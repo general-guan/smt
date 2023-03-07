@@ -1,7 +1,7 @@
-import { ReactNode } from "react"
-import style from "./index.module.scss"
-import Sider from "./Sider"
-import Content from "./Content"
+import { ReactNode } from 'react'
+import style from './index.module.scss'
+import Sider from './Sider'
+import Content from './Content'
 
 export default function Layout(props: { children: ReactNode }) {
   const { children } = props

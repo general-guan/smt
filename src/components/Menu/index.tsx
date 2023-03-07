@@ -1,4 +1,4 @@
-import style from "./index.module.scss"
+import style from './index.module.scss'
 
 export default function Menu(props: {
   items: { label: string; key: string }[]
@@ -13,7 +13,7 @@ export default function Menu(props: {
       {items.map(m => (
         <li
           className={`${style.menuItem} ${
-            selectedKey === m.key ? style.menuItemSelected : ""
+            selectedKey === m.key ? style.menuItemSelected : ''
           }`}
           key={m.key}
           onClick={() => onClick({ key: m.key })}

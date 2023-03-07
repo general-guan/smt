@@ -1,7 +1,7 @@
 .menu {
   display: inline-block;
   border-inline-end: 1px solid rgba(5, 5, 5, 0.06);
-  &-item {
+  &Item {
     width: 256px;
     height: 40px;
     line-height: 40px;
@@ -11,7 +11,7 @@
       color: #1677ff;
       background-color: #ecf5ff;
     }
-    &-selected {
+    &Selected {
       color: #1677ff;
       background-color: #ecf5ff;
     }

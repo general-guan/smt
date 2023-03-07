@@ -23,14 +23,15 @@ export default function Sider() {
   const [selectedKey, setSelectedKey] = useState(router.pathname)
 
   return (
-    <Menu
-      className={style.sider}
-      items={items}
-      selectedKey={selectedKey}
-      onClick={({ key }) => {
-        setSelectedKey(key)
-        router.push(key)
-      }}
-    />
+    <div className={style.sider}>
+      <Menu
+        items={items}
+        selectedKey={selectedKey}
+        onClick={({ key }) => {
+          setSelectedKey(key)
+          router.push(key)
+        }}
+      />
+    </div>
   )
 }

@@ -1,19 +1,23 @@
 .menu {
   display: inline-block;
   border-inline-end: 1px solid rgba(5, 5, 5, 0.06);
+  padding: 0 16px;
   &Item {
-    width: 256px;
-    height: 40px;
-    line-height: 40px;
+    user-select: none;
+    height: 48px;
+    line-height: 48px;
+    margin-bottom: 4px;
     padding-left: 24px;
+    border-radius: 8px;
+    font-weight: 600;
     cursor: pointer;
-    &:hover {
-      color: #1677ff;
-      background-color: #ecf5ff;
+    color: rgb(99, 115, 129);
+    &:not(&Selected):hover {
+      background-color: rgba(145, 158, 171, 0.08);
     }
     &Selected {
-      color: #1677ff;
-      background-color: #ecf5ff;
+      color: rgb(0, 171, 85);
+      background-color: rgba(0, 171, 85, 0.08);
     }
   }
 }

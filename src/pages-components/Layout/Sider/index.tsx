@@ -7,14 +7,17 @@ const items = [
   {
     label: 'Home',
     key: '/',
+    icon: 'dashboard',
   },
   {
     label: 'Chatgpt',
     key: '/chatgpt',
+    icon: 'analytics',
   },
   {
     label: 'Music',
     key: '/music',
+    icon: 'file',
   },
 ]
 

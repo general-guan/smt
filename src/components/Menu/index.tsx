@@ -1,7 +1,7 @@
 import style from './index.module.scss'
 
 export default function Menu(props: {
-  items: { label: string; key: string }[]
+  items: { label: string; key: string; icon: string }[]
   onClick: ({ key }: { key: string }) => void
   selectedKey?: string
   className?: string
@@ -18,7 +18,13 @@ export default function Menu(props: {
           key={m.key}
           onClick={() => onClick({ key: m.key })}
         >
-          {m.label}
+          <span
+            className={style.menuItemIcon}
+            style={{
+              WebkitMask: `url(https://minimals.cc/assets/icons/navbar/ic_${m.icon}.svg)`,
+            }}
+          ></span>
+          <span>{m.label}</span>
         </li>
       ))}
     </ul>

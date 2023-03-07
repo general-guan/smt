@@ -6,6 +6,7 @@ import 'highlight.js/styles/github.css'
 import style from './index.module.scss'
 import Button from '@/components/Button'
 import Paper from '@/components/Paper'
+import Input from '@/components/Input'
 
 export default function Chatgpt() {
   const [questionStr, setQuestionStr] = useState<string>('')
@@ -52,6 +53,7 @@ export default function Chatgpt() {
             setQuestionStr(e.target.value)
           }}
         />
+        <Input />
         <Button onClick={search}>Search</Button>
       </Paper>
 

@@ -1,5 +1,6 @@
 import http from '@/utils/http'
 import { useState } from 'react'
+import Button from '@/components/Button'
 export default function Chatgpt() {
   const [questionStr, setQuestionStr] = useState<string>('')
   const [answerStr, setAnswerStr] = useState<string>('')
@@ -20,7 +21,7 @@ export default function Chatgpt() {
           setQuestionStr(e.target.value)
         }}
       />
-      <button onClick={search}>查询</button>
+      <Button onClick={search}>查询</Button>
     </div>
   )
 }

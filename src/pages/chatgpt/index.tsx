@@ -4,6 +4,7 @@ import { marked } from 'marked'
 import hljs from 'highlight.js'
 import 'highlight.js/styles/github.css'
 import style from './index.module.scss'
+import Button from '@/components/Button'
 
 export default function Chatgpt() {
   const [questionStr, setQuestionStr] = useState<string>('')
@@ -49,7 +50,7 @@ export default function Chatgpt() {
           setQuestionStr(e.target.value)
         }}
       />
-      <button onClick={search}>查询</button>
+      <Button onClick={search}>Search</Button>
       <h2>结果</h2>
       <div
         className={`hljs ${style.markdown}`}

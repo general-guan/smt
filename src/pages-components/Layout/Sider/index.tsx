@@ -5,7 +5,7 @@ import style from './index.module.scss'
 
 const items = [
   {
-    label: '首页',
+    label: 'Home',
     key: '/',
   },
   {

@@ -5,6 +5,7 @@ import hljs from 'highlight.js'
 import 'highlight.js/styles/github.css'
 import style from './index.module.scss'
 import Button from '@/components/Button'
+import Paper from '@/components/Paper'
 
 export default function Chatgpt() {
   const [questionStr, setQuestionStr] = useState<string>('')
@@ -43,14 +44,17 @@ export default function Chatgpt() {
   }
   return (
     <div className={style.chatgpt}>
-      <input
-        type='text'
-        value={questionStr}
-        onChange={e => {
-          setQuestionStr(e.target.value)
-        }}
-      />
-      <Button onClick={search}>Search</Button>
+      <Paper>
+        <input
+          type='text'
+          value={questionStr}
+          onChange={e => {
+            setQuestionStr(e.target.value)
+          }}
+        />
+        <Button onClick={search}>Search</Button>
+      </Paper>
+
       <h2>结果</h2>
       <div
         className={`hljs ${style.markdown}`}

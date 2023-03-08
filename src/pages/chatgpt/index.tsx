@@ -46,14 +46,13 @@ export default function Chatgpt() {
   return (
     <div className={style.chatgpt}>
       <Paper>
-        <input
-          type='text'
+        <Input
+          label='发送消息给 AI'
           value={questionStr}
           onChange={e => {
             setQuestionStr(e.target.value)
           }}
         />
-        <Input />
         <Button onClick={search}>Search</Button>
       </Paper>
 
